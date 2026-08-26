@@ -1,0 +1,30 @@
+class Solution {
+
+    public double myPow(double x, int n) {
+
+        long N = n;
+
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
+        }
+
+        double result = 1.0;
+
+        while (N > 0) {
+
+            // If N is odd
+            if (N % 2 == 1) {
+                result *= x;
+            }
+
+            // Square x
+            x *= x;
+
+            // Divide exponent by 2
+            N /= 2;
+        }
+
+        return result;
+    }
+}
